@@ -18,10 +18,18 @@ class DatabaseSeeder extends Seeder
             $role->save();
         });
 
-        factory(App\User::class, 1)->create([
-            'name' => 'Admin User',
-            'email' => 'admin@admin.com',
-            'role_id' => 1
-        ]);
+        factory(App\User::class, 2)->create()->each(function($user, $index) {
+            if ($index == 0) {
+                $user->name = 'Admin User';
+                $user->email = 'admin@admin.com';
+                $user->role_id = 1;
+            } else {
+                $user->name = 'Test User';
+                $user->email = 'test@tes.com';
+                $user->role_id = 2;
+            }
+
+            $user->save();
+        });
     }
 }
