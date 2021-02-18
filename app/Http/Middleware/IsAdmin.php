@@ -18,8 +18,7 @@ class IsAdmin
 
     public function handle($request, Closure $next)
     {
-        if (!Auth::authenticate() && !Auth::user()->isAdmin())
-            return redirect()->intended('/login');
+        if (!Auth::user()->isAdmin()) return redirect()->intended('/home');
 
         return $next($request);
     }

@@ -18,11 +18,4 @@ class Authenticate extends Middleware
             return route('login');
         }
     }
-
-    public function authenticate()
-    {
-        if (!is_null($user = $this->user())) return $user;
-
-        throw new AuthenticationException($this);
-    }
 }
