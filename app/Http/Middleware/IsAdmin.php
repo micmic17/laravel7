@@ -15,9 +15,11 @@ class IsAdmin
      * @param  \Closure  $next
      * @return mixed
      */
+
     public function handle($request, Closure $next)
     {
-        if (!Auth::user()->isAdmin()) return redirect()->intended('/');
+        if (!Auth::authenticate() && !Auth::user()->isAdmin())
+            return redirect()->intended('/login');
 
         return $next($request);
     }
