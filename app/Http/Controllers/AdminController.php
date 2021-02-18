@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    //
-
     public function __construct()
     {
         $this->middleware('IsAdmin');
@@ -15,6 +13,6 @@ class AdminController extends Controller
 
     public function index()
     {
-        return "hello there";
+        return view('admin.index');
     }
 }
