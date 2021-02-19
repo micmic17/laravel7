@@ -21,7 +21,7 @@ Route::get('/register', function () {
     return redirect('/login');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/admin', 'AdminController@index');
 Route::get('/home', 'HomeController@index')->name('home');
