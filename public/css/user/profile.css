@@ -1,0 +1,43 @@
+.user-profile-image {
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+
+.user-profile-image button {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  color: white;
+  background: none;
+  border: 0;
+}
+
+.user-profile-image button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.user-name,
+.user-email {
+  font-weight: bold;
+}
+
+.user-name {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.user-email {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.user-profile-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+

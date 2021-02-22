@@ -24,4 +24,8 @@ Route::get('/register', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/admin', 'AdminController@index');
+
+// Non admin users
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'HomeController@profile')->name('profile');
+Route::post('/update/{user_id}', 'HomeController@update')->name('update');
